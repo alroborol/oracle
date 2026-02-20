@@ -88,7 +88,8 @@ tbody tr.table-swatch{display:flex;gap:8px;align-items:center}
 #day-info{grid-column:1 / -1}
 /* make advice span full width above the timetable */
 #advice{grid-column:1 / -1}
-
+/* make timetable span same full width as other cards */
+#table{grid-column:1 / -1}
 @media (max-width:880px){
 	#cards-grid{grid-template-columns:1fr;}
 	#day-info{grid-column:auto}
@@ -123,4 +124,5 @@ body[data-theme="light"] , body[data-theme="light"] html, body[data-theme="light
 /* smooth theme transition */
 body{transition:background .25s ease,color .25s ease}
 .card{transition:background .2s ease,box-shadow .2s ease,transform .18s ease}
+
 .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.7),0 4px 12px rgba(255,255,255,0.03)}
