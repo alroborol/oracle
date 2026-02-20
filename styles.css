@@ -51,7 +51,17 @@ tbody tr.enter.show{transform:none;opacity:1}
 
 @keyframes spin{to{transform:rotate(360deg)}}
 .muted{color:var(--muted)}
-@media (max-width:640px){body{padding:12px}thead th{display:none}tbody td{display:block;border-top:none;padding:8px}}
+@media (max-width:640px){
+	body{padding:12px}
+	thead th{display:none}
+	/* make each table row readable as a distinct card on small screens */
+	tbody tr{display:block;margin-bottom:10px;padding:10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid var(--td-border)}
+	tbody td{display:block;border-top:none;padding:6px 8px}
+	/* emphasize the time (assumed first cell) when width is narrow */
+	tbody td:first-child{font-weight:700;color:var(--text);margin-bottom:6px}
+	/* subtle separator between logical rows (in case visuals collapse) */
+	tbody tr + tr{border-top:1px solid rgba(255,255,255,0.03)}
+}
 
 /* calendar styles */
 .cal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
@@ -90,6 +100,7 @@ tbody tr.table-swatch{display:flex;gap:8px;align-items:center}
 #advice{grid-column:1 / -1}
 /* make timetable span same full width as other cards */
 #table{grid-column:1 / -1}
+
 @media (max-width:880px){
 	#cards-grid{grid-template-columns:1fr;}
 	#day-info{grid-column:auto}
@@ -124,5 +135,4 @@ body[data-theme="light"] , body[data-theme="light"] html, body[data-theme="light
 /* smooth theme transition */
 body{transition:background .25s ease,color .25s ease}
 .card{transition:background .2s ease,box-shadow .2s ease,transform .18s ease}
-
 .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.7),0 4px 12px rgba(255,255,255,0.03)}
