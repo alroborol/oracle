@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>梅花易数 & 神煞（Web）</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="date-card" class="card">
+        <div id="date-picker-block">
+        <input id="date" type="hidden" value="2026-02-20">
+        <!-- inline calendar appears below -->
+        <div id="calendar-container" aria-hidden="false"></div>
+        </div>
+    </section>
+
+    <div id="cards-grid">
+        <section id="day-info" class="card"></section>
+        <section id="advice" class="card"></section>
+        <section id="table" class="card"></section>
+    </div>
+
+    <footer>
+        <small>命理运势仅供参考，切勿过度迷信。</small>
+    </footer>
+
+  <script src="lunar.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
