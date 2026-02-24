@@ -136,3 +136,5 @@ body[data-theme="light"] , body[data-theme="light"] html, body[data-theme="light
 body{transition:background .25s ease,color .25s ease}
 .card{transition:background .2s ease,box-shadow .2s ease,transform .18s ease}
 .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,0.7),0 4px 12px rgba(255,255,255,0.03)}
+/* only calendar controls should change text color to accent on hover */
+.cal-nav button:hover, .cal-day:hover{color:var(--accent)}
